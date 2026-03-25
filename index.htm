@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Legh Arms Bowling Club — Sale, Manchester</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --green-deep:    #1a3a2a;
+      --green-mid:     #2d5a3d;
+      --green-light:   #4a7c5c;
+      --green-pale:    #c8dcc8;
+      --cream:         #f5f0e8;
+      --cream-dark:    #e8e0d0;
+      --gold:          #c8a84b;
+      --gold-light:    #e8c87a;
+      --brown:         #5a3a1a;
+      --text-dark:     #1a1a14;
+      --text-mid:      #3a3a2a;
+      --text-light:    #6a6a5a;
+      --white:         #fdfcf8;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Crimson Pro', Georgia, serif;
+      background: var(--cream);
+      color: var(--text-dark);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ─── NAV ─────────────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(26, 58, 42, 0.97);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(200, 168, 75, 0.3);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px;
+      height: 64px;
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      color: var(--gold);
+      font-size: 1.05rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .nav-links { display: flex; gap: 36px; list-style: none; }
+    .nav-links a {
+      color: var(--cream);
+      text-decoration: none;
+      font-size: 0.88rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.85;
+      transition: opacity 0.2s, color 0.2s;
+    }
+    .nav-links a:hover { opacity: 1; color: var(--gold-light); }
+
+    /* ─── HERO ────────────────────────────────────── */
+    .hero {
+      min-height: 100vh;
+      background:
+        linear-gradient(160deg, rgba(26,58,42,0.82) 0%, rgba(45,90,61,0.65) 50%, rgba(26,58,42,0.88) 100%),
+        url('data:image/jpeg;base64,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') center/cover no-repeat;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center;
+      padding: 80px 24px 60px;
+      position: relative;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 3px,
+        rgba(200,168,75,0.03) 3px,
+        rgba(200,168,75,0.03) 4px
+      );
+      pointer-events: none;
+    }
+    .hero-badge {
+      display: inline-block;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: 0.75rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      padding: 6px 20px;
+      margin-bottom: 28px;
+      animation: fadeUp 0.8s ease both;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      color: var(--white);
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      font-weight: 900;
+      line-height: 1.0;
+      margin-bottom: 12px;
+      animation: fadeUp 0.8s ease 0.15s both;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+    .hero-sub {
+      font-family: 'Crimson Pro', serif;
+      color: var(--cream-dark);
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      font-weight: 300;
+      letter-spacing: 0.04em;
+      margin-bottom: 48px;
+      animation: fadeUp 0.8s ease 0.3s both;
+    }
+    .hero-cta {
+      display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;
+      animation: fadeUp 0.8s ease 0.45s both;
+    }
+    .btn-primary {
+      background: var(--gold);
+      color: var(--green-deep);
+      text-decoration: none;
+      font-family: 'Crimson Pro', serif;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 14px 36px;
+      border: 2px solid var(--gold);
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn-primary:hover { background: transparent; color: var(--gold); }
+    .btn-secondary {
+      background: transparent;
+      color: var(--cream);
+      text-decoration: none;
+      font-family: 'Crimson Pro', serif;
+      font-size: 1rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 14px 36px;
+      border: 2px solid rgba(245,240,232,0.45);
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-secondary:hover { border-color: var(--cream); color: var(--white); }
+
+    .hero-scroll {
+      position: absolute; bottom: 36px;
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      color: rgba(245,240,232,0.5);
+      font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+      animation: fadeUp 1s ease 1s both;
+    }
+    .hero-scroll span { display: block; width: 1px; height: 40px; background: rgba(245,240,232,0.3); animation: scrollLine 2s ease-in-out infinite; }
+
+    /* ─── SECTION BASE ────────────────────────────── */
+    section { padding: 100px 24px; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.72rem; letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--green-mid); font-weight: 600; margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--green-deep);
+      margin-bottom: 24px;
+    }
+    .section-title em { font-style: italic; color: var(--green-mid); }
+    .divider {
+      width: 60px; height: 2px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      margin-bottom: 32px;
+    }
+    p { margin-bottom: 1rem; font-size: 1.1rem; color: var(--text-mid); }
+
+    /* ─── ABOUT ───────────────────────────────────── */
+    #about { background: var(--white); }
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+    }
+    .about-image {
+      position: relative;
+    }
+    .about-image img {
+      width: 100%; aspect-ratio: 4/3; object-fit: cover;
+      display: block;
+    }
+    .about-image::after {
+      content: '';
+      position: absolute;
+      top: 16px; left: 16px; right: -16px; bottom: -16px;
+      border: 2px solid var(--gold);
+      z-index: -1;
+    }
+    .about-image-caption {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(transparent, rgba(26,58,42,0.85));
+      color: var(--cream);
+      font-size: 0.82rem; letter-spacing: 0.06em;
+      padding: 32px 16px 12px;
+      text-align: center;
+    }
+    .stat-row { display: flex; gap: 40px; margin-top: 36px; }
+    .stat { border-left: 3px solid var(--gold); padding-left: 16px; }
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem; font-weight: 900; color: var(--green-deep); line-height: 1;
+    }
+    .stat-label { font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-light); }
+
+    /* ─── WHAT WE OFFER ───────────────────────────── */
+    #offer { background: var(--cream); }
+    .offer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 48px; }
+    .offer-card {
+      background: var(--white);
+      border-top: 3px solid var(--green-mid);
+      padding: 36px 28px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .offer-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(26,58,42,0.1); }
+    .offer-icon {
+      font-size: 2rem; margin-bottom: 16px; display: block;
+    }
+    .offer-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem; color: var(--green-deep); margin-bottom: 10px;
+    }
+    .offer-card p { font-size: 1rem; margin: 0; }
+
+    /* ─── HOW TO JOIN ─────────────────────────────── */
+    #join { background: var(--green-deep); }
+    #join .section-label { color: var(--gold-light); }
+    #join .section-title { color: var(--white); }
+    #join .divider { background: linear-gradient(90deg, var(--gold), transparent); }
+    #join p { color: rgba(245,240,232,0.8); }
+    .join-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .steps { margin-top: 12px; list-style: none; }
+    .step {
+      display: flex; gap: 24px; align-items: flex-start;
+      padding: 24px 0;
+      border-bottom: 1px solid rgba(200,168,75,0.2);
+    }
+    .step:last-child { border-bottom: none; }
+    .step-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem; font-weight: 900;
+      color: var(--gold); line-height: 1;
+      flex-shrink: 0; width: 40px;
+    }
+    .step-body h4 {
+      font-family: 'Playfair Display', serif;
+      color: var(--white); font-size: 1.15rem; margin-bottom: 4px;
+    }
+    .step-body p { color: rgba(245,240,232,0.7); font-size: 0.98rem; margin: 0; }
+
+    .join-aside {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(200,168,75,0.25);
+      padding: 40px 36px;
+    }
+    .join-aside h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--gold-light); font-size: 1.5rem; margin-bottom: 20px;
+    }
+    .fee-row {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 14px 0; border-bottom: 1px solid rgba(200,168,75,0.15);
+      color: var(--cream);
+    }
+    .fee-row:last-child { border-bottom: none; }
+    .fee-type { font-size: 1rem; }
+    .fee-amount {
+      font-family: 'Playfair Display', serif; font-size: 1.4rem;
+      color: var(--gold);
+    }
+    .fee-note { font-size: 0.8rem; color: rgba(245,240,232,0.5); font-style: italic; margin-top: 20px; }
+
+    /* ─── SEASON ──────────────────────────────────── */
+    #season { background: var(--white); }
+    .season-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; margin-top: 48px; }
+    .season-card {
+      border: 1px solid var(--cream-dark);
+      padding: 32px;
+      position: relative;
+      overflow: hidden;
+    }
+    .season-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0;
+      width: 4px; height: 100%;
+      background: var(--green-mid);
+    }
+    .season-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem; color: var(--green-deep); margin-bottom: 8px;
+    }
+    .season-card .tag {
+      display: inline-block;
+      background: var(--green-pale);
+      color: var(--green-deep);
+      font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 3px 10px; margin-bottom: 12px;
+    }
+    .season-card p { margin: 0; font-size: 1rem; }
+
+    /* ─── CONTACT ─────────────────────────────────── */
+    #contact { background: var(--cream); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
+    .contact-item { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 28px; }
+    .contact-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
+    .contact-info h4 {
+      font-family: 'Playfair Display', serif; font-size: 1rem;
+      color: var(--green-deep); margin-bottom: 2px;
+    }
+    .contact-info p { font-size: 0.98rem; margin: 0; color: var(--text-mid); }
+    .contact-form { display: flex; flex-direction: column; gap: 16px; }
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form select {
+      background: var(--white);
+      border: 1px solid var(--cream-dark);
+      border-bottom: 2px solid var(--green-mid);
+      padding: 12px 16px;
+      font-family: 'Crimson Pro', serif;
+      font-size: 1rem;
+      color: var(--text-dark);
+      outline: none;
+      transition: border-color 0.2s;
+      width: 100%;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus,
+    .contact-form select:focus { border-color: var(--gold); }
+    .contact-form textarea { resize: vertical; min-height: 110px; }
+    .contact-form button {
+      background: var(--green-deep);
+      color: var(--cream);
+      border: 2px solid var(--green-deep);
+      padding: 14px 36px;
+      font-family: 'Crimson Pro', serif;
+      font-size: 1rem; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      align-self: flex-start;
+    }
+    .contact-form button:hover { background: transparent; color: var(--green-deep); }
+
+    /* ─── FOOTER ──────────────────────────────────── */
+    footer {
+      background: var(--text-dark);
+      color: rgba(245,240,232,0.55);
+      text-align: center;
+      padding: 36px 24px;
+      font-size: 0.88rem;
+      letter-spacing: 0.04em;
+    }
+    footer strong { color: var(--gold); }
+
+    /* ─── ANIMATIONS ──────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes scrollLine {
+      0%, 100% { transform: scaleY(1); opacity: 0.3; }
+      50%       { transform: scaleY(0.4); opacity: 1; }
+    }
+
+    /* ─── RESPONSIVE ──────────────────────────────── */
+    @media (max-width: 800px) {
+      nav { padding: 0 20px; }
+      .nav-links { gap: 18px; }
+      .about-grid, .join-grid, .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+      .offer-grid { grid-template-columns: 1fr; }
+      .season-grid { grid-template-columns: 1fr; }
+      .stat-row { gap: 24px; }
+      .about-image::after { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">Legh Arms Bowling Club</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#offer">The Club</a></li>
+      <li><a href="#join">Join Us</a></li>
+      <li><a href="#season">Season</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-badge">Sale, Manchester</div>
+    <h1>Legh Arms<br><em>Bowling Club</em></h1>
+    <p class="hero-sub">A warm welcome on the green — new members always wanted</p>
+    <div class="hero-cta">
+      <a href="#join" class="btn-primary">Join the Club</a>
+      <a href="#about" class="btn-secondary">Find Out More</a>
+    </div>
+    <div class="hero-scroll">
+      Scroll
+      <span></span>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image">
+          <img
+            src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxESEhUSEhIWFRUVFRcVFRUYFRUXGBcXFRUYGBcVGBUZHSggGB0lHRUVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGhAQGy0lHyUtLTctLSsvLS0vLTIuLTUtLS0vLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIALcBEwMBIgACEQEDEQH/xAAbAAACAwEBAQAAAAAAAAAAAAAAAwECBQYEB//EAEkQAAEDAwIDBAYFCQYEBwEAAAEAAhEDEiEEMQVBURMiYYEGMnGRofBCUrHR4RQVI1NikpPB8TNygqPC0hZDotMlY3ODsuLjJP/EABkBAQADAQEAAAAAAAAAAAAAAAABAgMEBf/EACsRAAICAQMEAQMEAwEAAAAAAAABAhEDEiExBBNBUWFxgZEUMqHxI+HwIv/aAAwDAQACEQMRAD8A8UIhXDVML2zxykIhMhFqApCITLUQhBSEQmWotQFIRCZCIQFAFMK0KYQFYRCtCmEBWEK0IhCSsKCFeFMIQLtRamWohALtRCZai1LAuEQmWotQC4RCZai1LAu1RCbCLUAq1EJlqIQC4UQm2qLUAuEQmWohCRcIV7VKAraphMtRaoBSEQmQgBCCkIhMhEIBcKbUy1FqApai1MhFqApCLUy1TagFWqbUyEWoBcIhMtUwgFWqYTLUWoBcKbVeFNqAXCLUy1FqAXai1MhFqAXaohNtRagFWotTbVEIBdqi1NtRagFQiEy1EISLtUQm2qIQC4QmQhAUYQfsVoWbpNSPIS4HbGwEfOy9mkrAgZyc+/OPBZRyJmksbQ+1TargIhXszKQiEyEQlgpai1MhTCWBcKYV7VMJYF2qbUyEQlgXai1MhEJYKQiFeEQliikIhMhEJYFwptV4RCWClqLUyEQlgXaptTWtkgeKtqKVr3N+q4j3GEvwTWwi1Ramwi1LIFWotTYUWpYFWotTbVEJYF2qLU2FEJYF2qITYUWpZIu1CZahLBxbNQ4uHvwDHOZHNezhxAlzp2gER5jf2rwseA6RMgchjxPz1TKY2buJkycDcE58/kLyoSadnqTVqjpdBqr5Ow5eAj5+C9jM55YWGzVAMLWESIECMjxPzuvXpdQXNaAIA2Ocj3dF2xy+Djli8o04RarsGAphbWc5S1SArQphLBS1TCvCmEsC4U2q8KYSwLhEJkKISwUhEKyW6s0Oa0kAu9UdY3hLJSsuWxgqIWTxniTqIYWvaSSA9jskggm67eVrNKpDIpNpeC88bik35CFMKQrAK9mZUBEKznhsTGdsxMCTnlhDMgH7DPxVdavSW0OrPOdUwPDZyf5cieRXs1pmo89Xu/8AkVy/GOC1XP7RrAZq0yAHCTD2+6Y6rRbxadXVoGSb6ha6B9F5BBP4Lnx9QpTa+WjpydM4wUl6TNKEWq4CkNXVZyULhFqbai1LJoVaotTrVFqWBUKLU0hRCiwKhEJhCgqbFC4QsjWa8te4bQfrOHwAIUrPuo07TOWaRuSTPTpOTt4JtNkiTMGIBG45e3fw38UijljW8nPAxiRzAG2CTn9srYElzQ0iBIB3gY2kgmNp8SvNitj0JMTVeAAAB3hLoBj2Rz2+C9vDnmRIIBAgE9ef2YXj0tQAkw10nckxvyHLlv8AV8jpN1DB0HeiLgRPMgxj2rWDV2UldUbemcLQPBNIXO1OPFpdYy9rPWcDiTmGxMwIyn6f0kpOw4OafYCPgZ+C6Y54cWcssE+aNuFMLyUOJUX7VGz0Jg+4wV7FqpJ8GTi1yEIhSFaEsiisKYVoRCWKKQl1nhoJJgDcpOr1zWHDmGAcXRkEYn2XGN8FcjxzilTUONJvdpt9d7XXAggEWugZMx4ZWE+oiuOToh00pVfA+r6RvdWFhikw97E39W/j1jz8PF9Q2q8vaXMktIjcWgDcEbx8VWlaBAYI5CNgnClOwHu/BcTyyfJ3RxRjwM9JNYKunFQNjvNbB8AQn6D0mPZsDacw0NzP0cT8FOt0THUQwvEhwLhDpO5xjHRZdWkZMYGwxsOUeSrjySTb9s0y44SUV6RtO9JanKkPMlVb6RVj9Bg95WOzA3Jj2obWPIfEq7yzfkyWGHo3qVZ1fvPIkGIGBG/2leI8SrMLmMdDQ90CBzP3r0cDebXSCO90jkvHo2Ofqnsc0ljqrRjGCBf3htvv7VyxyS7knZ2zxx7MNjX1GsNXTiha6pUeIcIJM7+rzwR7wopU/wDxGsD9GpVLT1DySWke0T8lZ9TThlfUBpc20w03mRLRgOnzXtq6htLW1qjjLb3AxyLif/r7104Ek0/ucnUNuLXpUdM0K4ailJEwR4H8EwNXp2eTRS1Fqbapa3qmoUJtUFqZqqrWNuPWABuSvPQ4hRcD3wCJBbzBHI+J/ms3minTe5osM2rS2LkKpC9VOmHAOaQQdiDI+Cg6Yq+tFdDPIQvJxJxDMTJwMxuNpOPfC92qAptLnmAN/u9q5rjOsd2TngyxwIxuCZAa5sAxOZkjGFSeRJFoY22Y/FGPNVxFWRj6D/qj6rSPcUI/Omm+nBdAk9i3f95C43Ne1+TrSZ4dGy5pc4SGzBnugkkgnnnpz+CXW1vaOMCAY2EQ3y578l4XalxaKbSbZuIn27D55p1NrgQC0BsZPLx29vNYXtR0KO9jmUxG+B7cSrOyA0RLoAnlt3vLfxVqVC+QxpcRJtzy3MLU4DRAeH1WHvGPULrW2mJAG5JE46dFVmiRDKXZ0sZgZwciQXcsGJ+C8PFtFZBaZ5z1H4ZC3OKsaO0IBj6Jc22ccpjxH9V7OKFlWkxrGEOaIkgDvENbjORgk+1Ui3F7mskpJUcVR1LhvkLU0HELCIJbzEEgH2jmPBZ2poBriJEgw5siQfYqhq3+hzNJ7M+m6Osyo0Pbz3HQ8wvU1vguE9HeLmi+Heo7B8OjvJd8x2JgfauyGW0cOTDpZZoHQKtR7QQOpAHtK8HF+NUdO2ajhMSGj1jHhOB4nC4viOv1WrYamKVBpxvkzE9XZ54E4AMqJZNJMMTkerizAOzccNOoYXCSRbJJB6iEuro9PVcardU2mx9pDA0SAGgfU3xssnilOtS/Q6gEt3BBJaYxONt45b7KWaiR3bSOXdB+yFwRhR6eTKpVSNQ8N0w31pPsH/5q7dJpRtrKnTAcN/ZTWHVe7kGkneXFv2NIT28O1JtHZtaHmGvFQOAwSTgZwDzVnS5ZSKcnSR7Nc3TtxSq1q1Q4awFzZPUm0fPQZVNFQo39nXDmO6uqPgn2jA5528srf03CRpqLX0xTcXYcajmNc43Pky5wgYbj7VoVOGU64r9p2RFKbQ11Nzh3onuuJEYkEKmra1x/Jeknpf7r+KMStwSgPoO/iP8AI+sr0OBU3TLS+02iT6rYBDRBE+sd5PisfiHEqmieKf8AaUyLg0nIkxDZ2OOp8103DdQ3syX1KbDUIdb2jSR3QIPjj4rJ66tO0bLQnUkk0L0+gbRw1obcJImf5leTQaVprl1jZ7ZoDiO8D3Yz4StWs4OMtLXACCW5E+J6rzcNb3z/AOu3eOjFjbTdnS1FwVcGXr6/Z6qveG1G4Jpklt0NZm4HbI96jjuoB1VZoExJLdiQTdg9cgeSZqWA8Sc0wQXCRyj9Gsl1JtxBcTLXmQZMhxwSfDHuXZCfH0RwThu38s7VnpJj+xO0+sPuVHekzuVFvm4n7AtTXDTPpMbUrsLrWgPZTLexLmy1sAd6lGZPeGXZBMcbVqhr3Na5rrXFpLTcJG8HmMzPitXkn7OdY4ejYr8erHZrAPP70s8erzEtPsak8K0HbhxJd3XUmQ0T/auLbvYIlU1HDP0DqrQ8EU21B2jCG5rimWGOcS7foo1y9k6I+l+D1VeJPqdx+0gwQBkCZGPmffn6ehLntYQBe5xdgxMQAOZgA+HtiEaUuJhuOpEktBkSRzmCAD0zgZ2m9lSpbSO9Eh5m2jUqkkNeySbDJdPluuXI3KdJ7npYUoYba2T8HhrVK1IwxzpPSW9pG4gRD4HnuMyF4X8Uq7uqOiObj58/YtmjVZVpuxiKJta1zP7SiKmD2rpMxG0Rz3WNU0JfWtIJa3vO2DnTsDnBxk+w7mRMcmm4y8GcsPcSnj8l9DRdX79Uu7Jp2Ji7/Ece33dVkcV1THd2jJbyu+iSBgmdsf0wF22k0VJzC5zQBSLYBcRDSHS3APQbdF821moHaujngiLd+cQB+KRuX/r+DPqKh/jS45YsNfzAn3/FSkkU/rc+bjPswEK5yGjQp0nNH6Nt0FxJHqnmJ3kE7c5SbwZlwiYyc7xkq1JzmU3uIy4z1Eb+zkvZotUWtJLoIgCcnAl0T7Y9yng25CnqwyAADG5OfI+XgrjjLYEbjk3MnrH816tHqmvP6RmCZDwBIPXxHzlHpRSa2nTdcM1AA4ExFrsz7lF70yaVWmc9qdY+q4F8wHt7vId4b4yV1Wrq1GVmNv7r7YPaUGltwBix+cXR/Jc3p2B7j32w6A3Iy4EQAesro+K8MNSrTqB7Q1jm3S2pMtsEYbGS3eeavKr3EXKtjnNXwt9etUt7xDu9JM557e1NZ6NVxs4j2OcP9K1OCydVXA5uj/qXROpEG10DF0k4iJmdtsrnllnF0jqjhxyVtnKU+B6obPHnnp1C9PEeJvo0mUnPDqrZgZNoMYgY5Yu6nkukIEeu0mAYDgTDtnY5HqvHw/h2md2lSm0OBLmHDhBE3gXZEknbCjvyX7iX02OVaGc/6PDt6naua6u4BxeXuAY1wFwcbjLoDXb+EALo6FVzpousbc9zsVZd339q0BtoEEOGZ8VbgOkp0T2bS1pmuSDANjmOLJ5mLlkcWFN/FG1G6miQX0QG3PvkNY2A0M3JELaOTW2cmSChSRp061Sq+QKDpb2Zb2lQze4RMUT9VchxqiaD+6y0mXQ19zSJJDRLREYGfKF03ozwutw++vVdTeA6m2Kby43d/unAjc+4ry6nW1Dc9tCWdmZe4yQxptJAkCTdsVOpqVIhJOLb5Oe0eqe5gfUYQDs9oMew+K1NFxF9Ii0yAbrTMbESWz0O6e3UUqIY11CvY0gFpLbS65rh3W4OARmZuSf+INKHOa1sNdBBvpNDRa0d60GDLTjxWiprco7i9joK2v02oYw1GuLqc4a8DDjMxEnK9Oi4lpWOqltJzTVm45J7zrjEugZXIu4zQ7PNAuLpa2pfzb9JpFPO/Xkk1OKscC6jSe2CAbn3g4MxDAeWcqNKqkNTvU+TY9I6lJ7m1GNJIAi+JEE7R7QsdmqOZj5+P9Umg9zg5z2Qe7m4k95t2xyMHb2qNcIJgEDBHsIkZO3LK52qdISk27Z6qOoddcx1r/ODiIg5GFoaH0hLcVWkEumZtId3RtjPd2wsX81VwXSwgwCCXsnMT9LoPiurr6LTVWN7Qi+0NLrgDIAHrT4ez2q1VyrNMVu1qr6j9KKNSq2sx81AZIJMkA4nmMAZysbVUYeQY2fi4CTzgnciQTHVZ/5qr03uFNzXNDjY41KWwiPpDnPuXv1LdTVaGVW0iWjuVO1ZcOs2nM+1XWKS3RMsq4Z1tXVUiC4U4cWtiHkCW0TTFotg+scLmvzfXMWljCTnEiSCT3YbGecre4a+ixodUqMvvbIaajm9mImAee+IGEaqrp7h2dRoYLYkVZgN29U855rNxzLw39jeD6d7Pb7mNS0erZhuot62sI/1Z3RW0Gpd62pcf8LfsIlbtHXaYAB1R2HGbG1ILSGwHZbOQ7BndJfr6JDO+8FodcAw2k96J7w6tzapWPM/f4DydOm1XleTzcL0DqYcXVC4uIkw0bA9ABz+C9zajxIIwdgWU3SCC2e+DBIc4Y3leL8vpDFron6rY+1X4pxOhVaWhlRodSscQGDvdm1twMnm3mFnHp80nbTRvPqcEIqMaaPS9z3C0TA5BrAAAI2YBEDA6LwtYw1XiSO6xxIcWknvCC5pHQe4JfCddQoNYy17msIdBfTm4Vu03iI8h/NLZxJoqF0DLQ2Lm8rvv+Cs+myblY9XiaSey2/2U9IS6nTIDiLobl7iIkxcLsnfJBXHVWskQ0yZkkCfE55Lp+MOp1nBwLWHnLmnOM4jp8VmnhzDvWaRzHdj+m/vW0ME1/aPPzZVOV0YvaUzmz7ULddw2kd6jZ/wKFp2Z/8AMytCKJJBDqZZkHMZwek9Qk8SYxrGhzXtDiXS08yAYmegau1oaNrqFF4py8vM2tl0OvAOM4x7lOr4LTDhIBHicgjcBoBJIPiNjIWbpM1W6PnTCG+rWe3+86MewhMfXuFrtTLZmCWnI54C3OO8AZUvLAxjpNs4Dg0ZtgYzyA+9cyeGPEtcLXAZBkHbpCstyvB7NF2bXSardwRzgjnEgz4rrK3FGl4psqHJYAG2Sb4IcZBxBHuXGfkYw2BMtPXBMAe9e3iGjMUSBcYskNjvsDmgfuinhJRT5Lxm1wdDwhlupqDoGuB6mQZPmVuOeS7YRFsWti22222IiMbL59V4XXD3NpsqvDYkim/eASIA6yumGuLtQ0FxaADcyQcgbd0E+PkueWFy3izsx9RFKpL+jbqEYgNGA3DWjut2bIEwOix9BJoVWB4a81ahZkDZ2J8MLk9aQatSCDL3RttcVt8A4fSfRe6q25wqlje84D1QR6pAjLioli0xtu+CI5u49MUlybHCmiWh1QOrMpVroaTM0+7J8IK5is1x4lpTEknRE+0CnOV03o5w+KrqkGHhzS8kQ0FjmgR4yD0XnPAajdZSqtIcxgoAuua0nsrA42EyPVK0hKMbOfJFya2F8PbVp6fWODBB1TXA7GQ6rYRHKQcoZSqVabxUqWEzHd5GPHY558l7+LafT0mVgNQXNfqG1BaxwIteZkOfkmXNGRieUgIkVGCqx0uwLYwDJyXHBiMgT0UPS3ZEYtGN6SPrMxdeGvYSYE3BjTkAYyY8lkcE4IawfuIaA0wD3pkiCR9HK7SrpGloY5zhLM95on6JyRn1ZTdHoBRzMxIyQZmM91o6AeXiqqbjGkjRwi3dmFp/Rw9myle6Wvdnsxzn9r9rdN0vo5Y4m6RdcAaYd6sxu7MXAzHJaVSqKhggtDgHEh0QJHhytlX0j5BaACGyJLokHnJGU1yrcrSbPNx1rWsaBmTBIY1pBY1gM8z6x548lg1K9pBuEkADuMOwAjJ8OnJdHxOkHNDOyLomLamSTvy/ZCTR4HRrPZTnL3BrZfaG4nvHJmZHmEgtO8TnnnxqelyV+idHwrUVGdoKrbCCQbaYPPq09EVeA6prLzWAwDbDJk7N9TeTC2tXw2lQb2T7ZbY1zg8xBaHOMzjuyvLqdZRfUYG1nWjJiqTO8DfJyOfJaqcn5NmklwZ2o4BqWlo/KDLnBogtGSCZP6PwTKvo3XFoOpdLjEB3mT6nISfJezWGm1zLqjw2SZdVf0IkFxMZEearQfRdVIa9xgd39JUM8zs6CAAcJql7KxlCSuNNHkrejtRpaDqX94gesec8o6AptH0Uq1aljK73QATL3CAQTPwb+8vdVpU7hEiHNE3umJyZnwB81o8GqaZr6rqpBFrbQ5znEnvExJPIsHkojJt8lsjUY26RxXHOH/ktdtF7nuLrpIqvABbTvx13A96wuHa5taoGQ9mCSe2qHAExyXWelmgurUq1MA04eCQ5u5pAE2zcO8SMjkuH4Lp3CsLmmIO4gZEbkeK0iYSyaoNwf4OjPDaQpVKtrpZ3rTVqHBgAEh28uHuKxjXbj9F/mVTjn9JdADRNKoHloLyA0xBwSZAjDdh5LyaZtEOFzg5sEQANiInP2jKrrVtE4tTgm+Tw6lzRaGUA4uAdE1SQC0OiA7bKvqm0xp2VLGNe6oWlhDjAGdi6Zxz6rW0wo09TTd2g7NrS03QXeoWt7sR9UleXXAVKRZcCQ6o/AOe0mAABEjAS0a72ZemrU3Oa0spd8gTYMAmNy4x1XV6vhehbSe9oplwDi0RSPgMW8/5rD4e5zKdOm9jGgEPNSD2gIcDaIHh15rptdxOnXpvp0yfVnItnHdAk7yZ/wqGwl7Pn2s1VlR7AxkNcWj9GzkY5tQtSvwsOc5xpkkuJkOOQSSOfSFC0TVFZRlZs0ajiwh1UwGPOCBhjSWtgeOT1gLzPqE5NUeGB8yuhpi3Aa0b7NYN9+StJ6fAfcuLvINmDSpiwvc4Emo0A3RALXmDv0GFFDSA3OkElrtv2mwTA/vLoe1cNnEecKfymp9d37x+9R3ydRtaf0Z05Y0lpEtH0n9Os5V/+HtOJgkZO1V4/1LJbxTUjatV8IqP+9B4pqP19b99/3rJv5Zqs3wbul4NTAIY5wyDirU5T0f7F6hwFs+sdvr1v+4uXPEq5/wCdVP8Ajf8AehmurDapVH/uO+9RY7y9G9W9H6Jd3oJ2kvq+P/mqKno5onCHtZIz60dc94k/FYn5wr/rav8AEf8AepHEtR+uq/xHfep1fJHe+DZZ6PaACO5j9tqs3gGhx6n77eiwzr6362p++5A11b9ZU/fd96jUT3fg6EejWmcJbTbG0gv5AfVeB8Fb/hbTyP0bf83/ALi538urfran77kDX1v1r/3imod5ejpT6K6b9Uw7cn/700+jujaIdTptyeTROBzfJXK/l9X9Y/3q1PidVu1V4noYSx3l6Onb6P6KPVp/5fT2KzfR3R86dPfpT+5cx+d6/wCuqfvFWbxjUD/mv96WO8jc1fo1oiJsYDBAgtHuDefKd+S+aE06bpBHeJbEgkh7YBF2QAQNl1/52r7GoSMmCGnffcLxPtO7Ke0f2VKfIhuFpDIkUc4+EZz+Gl1OjVY+G1GFrm4EuayoSZgwS1jD7crxUKF9M1mVHRYHEG3BDQXNy3l1G66QaoxbDI3jsqcSRE+r0kKorwCLaed/0VH/AGrRZ4+irlZz2i0M067QO+ypTAlzXATTe5wbIAbNwb/RK0umqvqNEute15BubuKN1pgdY+K2m6SmAQG7xME5iYz5n3qaGnYwgsbBG2TjEc/Awp/URKqkqR6/zFqRTeKj6bj3DTdHquvEmbekjzWVxHhusAY7tKcPaH4luHGYJDfFa7+I1TgvJgyNt+qodY+AC7AAaAQDAGw2VO+WlokqktjltbSqirRbWILSXuFhdyAw7En8VscTs7PsmU2tDmgiqAJw8EgHfLXjbIHkn16bXODnAEt2OMT0Vg0d3Hq+rjbAbjyAHkrLPG02jJQjHG8eNUiOF6Oc06jGtZTeCC2XOdY8tcGkSbXQcdAudp6YQP8A+up5OdzXS9oRnpPIcxB38F4PzbQH/Kp/w2fcplni3ZfC+3BRe5maTh4dUY1modcXtA7ziJdHeIJzOStD0p4FXp06ZOoul5jBH0YmZXqoMYxwc1jA4RBFNmLfVzbyXs1HEajwA8tcBsHU6Rj3t8VCzpGjnFnD6Xh9Y1GNNaJe3aZHeAlbvEi5tEFtd5eKz5gkGOyo93eY9YjrM81rflX7NL+DS/2K9PXOaSWtpgkAEijSEgbD1VP6hEKUTGoUWBoH5ZVZAiwCtDRyaIMQNkLd/PFXrT/hUv8AahP1BOqB4rvEfBWDvH4BKDR1+1SB4rkMh1/z8hRd7fnySh84CvJ/ragLh3ifcgPHU/PkqZ8FJ+cH71AsvPt+KJ8fn3qgj5H4qwISwF3ipDvaokDn/wBX3BQajeo95QFpPyVN3zKWKg6/BHaTsZ9gCkWMlTJ8fcUuwnr7grdmliy8n5j70XeKhrfZ7lYAfWHuUWSVuPVFxUwOsqBHT4lTYCSP6qQ/53UZ+q1Dmnw9wUWRZcH5hBk8ilhx6/BSJ8figsuGnp9iCD8/gFAYTyPx+9ERzCAn55o7I9PiFX/EENcOv2ISBEf1H8lBj5JUyFJnwHmEAvHT4KbT8lXA8fsVXDxKAo4dftVZHyApdHLKA88gpBWfb7kR4Dzn71fvePvVQ2d3fH8UBWP7vuQrWDqoU2BIc7632IM8z8UNDfqkef4K4YPFVsiiA3wBUx4BMDR8lGOvwSxRAaeilrXHqpI/aUTHP59ygBYRuSPNVIHU+9XvUtcfqpuBXshWA/ZHuV3Od0UmeakFRTO9rfcpz/RGOqgPaFALE+1SC3xPmqiqzojtQlAsT4KQD4KhcoLp5x5pQHhruuPJRb4/YlNbHNEePxSgNtHzCC0dB5kJYcOo+1Qa3T7AgGZ+qEAH5KW6sVFxPz4qRY3z+KqQOZS7T0+KBS9qCy1wCkV1QUR0Ks5sfjKAk1ienuU988h7oVTVQahQWWFFyjs+spbnlVyoFjCGqTUCr2WMqooqQBeeSW4OPVODB8/0QSOsfPggE9kev2IVjV+coU2Bfb+Ck1p5lCEBMg81YNbHNShQ2SRaPmVJe1CEKkzPyVBZA3KEKLJKZ2VjPNCFayADirtE/PwQhGTRdjAFJehCqKAVANwjtgdh8EIU0BRchonkhCmhQwac9PioNEBCFUmixgdFDnKEKSrKNeq3u5KUKSBbq7uZUCsevwQhSCQ8lWHihCBMsD7fegVsqUISS6thKqVD0QhVAgvcVF6EKxBOUIQoB//Z"
+            alt="Legh Arms bowling green"
+          />
+          <div class="about-image-caption">Our beautifully kept green</div>
+        </div>
+        <div class="about-text">
+          <p class="section-label">About Us</p>
+          <h2 class="section-title"><em>Crown Green bowling</em><br>in the heart of Sale</h2>
+          <div class="divider"></div>
+          <p>
+            Legh Arms Bowling Club is one of Sale's most welcoming bowling clubs, set in the grounds of the Legh Arms pub in the heart of Sale Moor. We offer a friendly, inclusive environment for players of all abilities — from complete beginners picking up a bowl for the first time to seasoned competitors.
+          </p>
+          <p>
+            Whether you're looking for gentle social play on a summer evening, competitive league and cup fixtures, or simply good company and a mid-game or post-game pint, you'll find it all here.
+          </p>
+          <div class="stat-row">
+            <div class="stat">
+              <div class="stat-num">50+</div>
+              <div class="stat-label">Members</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">Apr–Sep</div>
+              <div class="stat-label">Season</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">All ages</div>
+              <div class="stat-label">Welcome</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE OFFER -->
+  <section id="offer">
+    <div class="container">
+      <p class="section-label">What We Offer</p>
+      <h2 class="section-title">More than just <em>bowls</em></h2>
+      <div class="divider"></div>
+      <div class="offer-grid">
+        <div class="offer-card">
+          <span class="offer-icon">🎯</span>
+          <h3>Competitive Play</h3>
+          <p>We compete in local league fixtures throughout the season, giving members a chance to test their skills against other clubs in the Sale and Manchester area.</p>
+        </div>
+        <div class="offer-card">
+          <span class="offer-icon">☀️</span>
+          <h3>Social Evenings</h3>
+          <p>Not ready for league play? No problem. Our regular social roll-ups are relaxed, fun, and perfect for learning the game at your own pace alongside friendly faces.</p>
+        </div>
+        <div class="offer-card">
+          <span class="offer-icon">🏆</span>
+          <h3>Club Competitions</h3>
+          <p>Internal competitions throughout the season — singles, pairs, and more — give every member a taste of friendly rivalry and the chance to win silverware.</p>
+        </div>
+        <div class="offer-card">
+          <span class="offer-icon">🍺</span>
+          <h3>The Legh Arms</h3>
+          <p>We're based at the Legh Arms pub, so there's always a warm welcome and a great drink waiting for you after a game. The perfect way to end any evening.</p>
+        </div>
+        <div class="offer-card">
+          <span class="offer-icon">📚</span>
+          <h3>Coaching & Guidance</h3>
+          <p>Complete beginners are warmly encouraged. Experienced members are always happy to show you the ropes — bowls is easier to learn than you might think!</p>
+        </div>
+        <div class="offer-card">
+          <span class="offer-icon">🤝</span>
+          <h3>Community</h3>
+          <p>We're a tight-knit, friendly club where you'll quickly feel at home. Socialising on and off the green is as much a part of membership as the sport itself.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO JOIN -->
+  <section id="join">
+    <div class="container">
+      <div class="join-grid">
+        <div>
+          <p class="section-label">Membership</p>
+          <h2 class="section-title">How to <em>join</em> us</h2>
+          <div class="divider"></div>
+          <p>Joining Legh Arms Bowling Club is simple and straightforward. We welcome new members of all ages and abilities throughout the season — you don't need any experience to get started.</p>
+
+          <ol class="steps">
+            <li class="step">
+              <span class="step-num">01</span>
+              <div class="step-body">
+                <h4>Come and have a look</h4>
+                <p>Pop down to the Legh Arms during any of our sessions — no commitment needed. Watch a game, have a chat, and see if the club feels right for you.</p>
+              </div>
+            </li>
+            <li class="step">
+              <span class="step-num">02</span>
+              <div class="step-body">
+                <h4>Have a free taster session</h4>
+                <p>We'll lend you a set of bowls and walk you through the basics. There's no obligation and no experience necessary — just come prepared to enjoy yourself.</p>
+              </div>
+            </li>
+            <li class="step">
+              <span class="step-num">03</span>
+              <div class="step-body">
+                <h4>Complete your membership form</h4>
+                <p>If you'd like to join, simply pay your annual subscription. You'll receive your membership card and club details.</p>
+              </div>
+            </li>
+            <li class="step">
+              <span class="step-num">04</span>
+              <div class="step-body">
+                <h4>Get on the green!</h4>
+                <p>You're now a fully-fledged member. Join roll-ups, enter competitions, play league games — the green is yours to enjoy all season long.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <div class="join-aside">
+          <h3>Annual Membership Fees</h3>
+          <div class="fee-row">
+            <span class="fee-type">Adult</span>
+            <span class="fee-amount">£30</span>
+          </div>
+          <div class="fee-row">
+            <span class="fee-type">Senior (65+)</span>
+            <span class="fee-amount">£20</span>
+          </div>
+          <div class="fee-row">
+            <span class="fee-type">Junior (under 18)</span>
+            <span class="fee-amount">£20</span>
+          </div>
+          <div class="fee-row">
+            <span class="fee-type">Social Member</span>
+            <span class="fee-amount">£20</span>
+          </div>
+          <p class="fee-note">Equipment is available to borrow for new members. Flat-soled shoes required on the green.</p>
+
+          <br>
+          <h3 style="color:var(--gold-light);font-family:'Playfair Display',serif;font-size:1.2rem;margin-bottom:12px;">What you'll need</h3>
+          <p style="color:rgba(245,240,232,0.7);font-size:0.98rem;margin:0;">
+            ✓ Flat-soled shoes or trainers are fine to start<br>
+            ✓ No dress code - wear what you want<br>
+            ✓ No bowls needed — we have sets to borrow<br>
+            ✓ Willingness to have fun!
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEASON -->
+  <section id="season">
+    <div class="container">
+      <p class="section-label">The Season</p>
+      <h2 class="section-title">When we <em>play</em></h2>
+      <div class="divider"></div>
+      <p style="max-width:600px;">Our outdoor season runs from April through to September, with something happening most weeknights and often weekends too. Here's what to expect across the year:</p>
+      <div class="season-grid">
+        <div class="season-card">
+          <span class="tag">March</span>
+          <h3>Season Opening</h3>
+          <p>The green reopens and members return for the first roll-up of the year. A great time to join — everyone's finding their feet again!</p>
+        </div>
+        <div class="season-card">
+          <span class="tag">April – September</span>
+          <h3>League & Social Play</h3>
+          <p>Mid-week league fixtures begin. Social evenings are in full swing — the long summer evenings make for perfect bowling conditions.</p>
+        </div>
+        <div class="season-card">
+          <span class="tag">July – August</span>
+          <h3>Club Competitions</h3>
+          <p>Our internal singles and pairs competitions take place around once a month. We also hold some open competitions where anyone can play.</p>
+        </div>
+        <div class="season-card">
+          <span class="tag">September</span>
+          <h3>End of Season</h3>
+          <p>Final league matches and competitions. The green closes around the end of the month</p>
+        </div>
+          <div class="season-card">
+          <span class="tag">Close season</span>
+          <h3>Green maintenance</h3>
+          <p>We hold regular work parties during the close season to keep the green and surrounds tidy. Painting, woodworking, gardening - there's always something to do and it keeps us in contact over the winter.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div>
+          <p class="section-label">Get in Touch</p>
+          <h2 class="section-title">Come and find <em>us</em></h2>
+          <div class="divider"></div>
+          <p>We'd love to hear from you, whether you're interested in joining, have a question about the club, or simply want to come and watch a game.</p>
+
+          <div class="contact-item">
+            <span class="contact-icon">📍</span>
+            <div class="contact-info">
+              <h4>Address</h4>
+              <p>Legh Arms<br>178 Northenden Road, Sale<br>Manchester, M33 2SR</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">📅</span>
+            <div class="contact-info">
+              <h4>When We're Here</h4>
+              <p>Monday & Thursday evenings from 6:30pm<br>(during the April – September season)</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">✉️</span>
+            <div class="contact-info">
+              <h4>Email</h4>
+              <p>info@legharmsbc.co.uk</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">📞</span>
+            <div class="contact-info">
+              <h4>Phone (Club Secretary)</h4>
+              <p>Available on request — please email first</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p><strong>Legh Arms Bowling Club</strong> — Sale, Manchester &nbsp;|&nbsp; Season: April – September</p>
+    <p style="margin-top:8px;">© 2026 Legh Arms Bowling Club. All rights reserved.</p>
+  </footer>
+
+</body>
