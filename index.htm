@@ -368,6 +368,9 @@
       font-size: 0.88rem;
       letter-spacing: 0.04em;
     }
+    footer p {
+        color: rgba(245,240,232,0.55);
+    }
     footer strong { color: var(--gold); }
 
     /* ─── ANIMATIONS ──────────────────────────────── */
@@ -383,11 +386,16 @@
     /* ─── RESPONSIVE ──────────────────────────────── */
     @media (max-width: 800px) {
       nav { padding: 0 20px; }
-      .nav-links { gap: 18px; }
+      .nav-links { gap: 0.5em; }
       .about-grid, .join-grid, .contact-grid { grid-template-columns: 1fr; gap: 48px; }
       .offer-grid { grid-template-columns: 1fr; }
       .season-grid { grid-template-columns: 1fr; }
       .stat-row { gap: 24px; }
+      .stat-num { font-size: 1.5em; }
+      section {
+        padding: 24px;
+        }
+      .about-image{ width: 85%; }
       .about-image::after { display: none; }
     }
   </style>
@@ -396,11 +404,10 @@
 
   <!-- NAV -->
   <nav>
-    <div class="nav-logo">Legh Arms Bowling Club</div>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
-      <li><a href="#offer">The Club</a></li>
-      <li><a href="#join">Join Us</a></li>
+      <li><a href="#offer">Club</a></li>
+      <li><a href="#join">Join</a></li>
       <li><a href="#season">Season</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -481,7 +488,7 @@
         <div class="offer-card">
           <span class="offer-icon">🏆</span>
           <h3>Club Competitions</h3>
-          <p>Internal competitions throughout the season — singles, pairs, and more — give every member a taste of friendly rivalry and the chance to win silverware.</p>
+          <p>Internal and open competitions throughout the season — singles, pairs, and more — give every member a taste of friendly rivalry and the chance to win silverware.</p>
         </div>
         <div class="offer-card">
           <span class="offer-icon">🍺</span>
@@ -510,14 +517,14 @@
           <p class="section-label">Membership</p>
           <h2 class="section-title">How to <em>join</em> us</h2>
           <div class="divider"></div>
-          <p>Joining Legh Arms Bowling Club is simple and straightforward. We welcome new members of all ages and abilities throughout the season — you don't need any experience to get started.</p>
+          <p>Joining the Legh Arms Bowling Club is simple and straightforward. We welcome new members of all ages and abilities throughout the season — you don't need any experience to get started.</p>
 
           <ol class="steps">
             <li class="step">
               <span class="step-num">01</span>
               <div class="step-body">
                 <h4>Come and have a look</h4>
-                <p>Pop down to the Legh Arms during any of our sessions — no commitment needed. Watch a game, have a chat, and see if the club feels right for you.</p>
+                <p>Pop down to the Legh Arms on a Monday or Thursday evening — no commitment needed. Watch a game, have a chat, and see if the club feels right for you.</p>
               </div>
             </li>
             <li class="step">
@@ -562,12 +569,12 @@
             <span class="fee-type">Social Member</span>
             <span class="fee-amount">£20</span>
           </div>
-          <p class="fee-note">Equipment is available to borrow for new members. Flat-soled shoes required on the green.</p>
+          <p class="fee-note">Equipment is available to borrow for new members. Flat-soled shoes or trainers required on the green.</p>
 
           <br>
           <h3 style="color:var(--gold-light);font-family:'Playfair Display',serif;font-size:1.2rem;margin-bottom:12px;">What you'll need</h3>
           <p style="color:rgba(245,240,232,0.7);font-size:0.98rem;margin:0;">
-            ✓ Flat-soled shoes or trainers are fine to start<br>
+            ✓ Wear flat-soled shoes or trainers on the green<br>
             ✓ No dress code - wear what you want<br>
             ✓ No bowls needed — we have sets to borrow<br>
             ✓ Willingness to have fun!
