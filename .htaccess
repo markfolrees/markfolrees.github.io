@@ -1,0 +1,2 @@
+RewriteCond %{HTTP_HOST} ^www\.legharmsbowlingclub\.co\.uk [NC]
+RewriteRule ^(.*)$ https://legharmsbowlingclub.co.uk/$1 [L,R=301]
