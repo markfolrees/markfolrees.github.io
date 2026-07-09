@@ -1,33 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Legh Arms Bowling Club — Sale, Manchester</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap"
+    rel="stylesheet">
 
   <style>
     :root {
-      --green-deep:    #1a3a2a;
-      --green-mid:     #2d5a3d;
-      --green-light:   #4a7c5c;
-      --green-pale:    #c8dcc8;
-      --cream:         #f5f0e8;
-      --cream-dark:    #e8e0d0;
-      --gold:          #c8a84b;
-      --gold-light:    #e8c87a;
-      --brown:         #5a3a1a;
-      --text-dark:     #1a1a14;
-      --text-mid:      #3a3a2a;
-      --text-light:    #6a6a5a;
-      --white:         #fdfcf8;
+      --green-deep: #1a3a2a;
+      --green-mid: #2d5a3d;
+      --green-light: #4a7c5c;
+      --green-pale: #c8dcc8;
+      --cream: #f5f0e8;
+      --cream-dark: #e8e0d0;
+      --gold: #c8a84b;
+      --gold-light: #e8c87a;
+      --brown: #5a3a1a;
+      --text-dark: #1a1a14;
+      --text-mid: #3a3a2a;
+      --text-light: #6a6a5a;
+      --white: #fdfcf8;
     }
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       font-family: 'Crimson Pro', Georgia, serif;
@@ -39,14 +50,21 @@
 
     /* ─── NAV ─────────────────────────────────────── */
     nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
       background: rgba(26, 58, 42, 0.97);
       backdrop-filter: blur(8px);
       border-bottom: 1px solid rgba(200, 168, 75, 0.3);
-      display: flex; align-items: center; justify-content: space-between;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       padding: 0 48px;
       height: 64px;
     }
+
     .nav-logo {
       font-family: 'Playfair Display', serif;
       color: var(--gold);
@@ -54,7 +72,13 @@
       letter-spacing: 0.06em;
       text-transform: uppercase;
     }
-    .nav-links { display: flex; gap: 36px; list-style: none; }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+
     .nav-links a {
       color: var(--cream);
       text-decoration: none;
@@ -64,31 +88,39 @@
       opacity: 0.85;
       transition: opacity 0.2s, color 0.2s;
     }
-    .nav-links a:hover { opacity: 1; color: var(--gold-light); }
+
+    .nav-links a:hover {
+      opacity: 1;
+      color: var(--gold-light);
+    }
 
     /* ─── HERO ────────────────────────────────────── */
     .hero {
       min-height: 100vh;
       background:
-        linear-gradient(160deg, rgba(26,58,42,0.82) 0%, rgba(45,90,61,0.65) 50%, rgba(26,58,42,0.88) 100%),
+        linear-gradient(160deg, rgba(26, 58, 42, 0.82) 0%, rgba(45, 90, 61, 0.65) 50%, rgba(26, 58, 42, 0.88) 100%),
         url('images/hero-bg.jpg');
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       text-align: center;
       padding: 80px 24px 60px;
       position: relative;
     }
+
     .hero::before {
       content: '';
-      position: absolute; inset: 0;
-      background: repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 3px,
-        rgba(200,168,75,0.03) 3px,
-        rgba(200,168,75,0.03) 4px
-      );
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(0deg,
+          transparent,
+          transparent 3px,
+          rgba(200, 168, 75, 0.03) 3px,
+          rgba(200, 168, 75, 0.03) 4px);
       pointer-events: none;
     }
+
     .hero-badge {
       display: inline-block;
       border: 1px solid var(--gold);
@@ -100,6 +132,7 @@
       margin-bottom: 28px;
       animation: fadeUp 0.8s ease both;
     }
+
     .hero h1 {
       font-family: 'Playfair Display', serif;
       color: var(--white);
@@ -109,10 +142,12 @@
       margin-bottom: 12px;
       animation: fadeUp 0.8s ease 0.15s both;
     }
+
     .hero h1 em {
       font-style: italic;
       color: var(--gold-light);
     }
+
     .hero-sub {
       font-family: 'Crimson Pro', serif;
       color: var(--cream-dark);
@@ -122,10 +157,15 @@
       margin-bottom: 48px;
       animation: fadeUp 0.8s ease 0.3s both;
     }
+
     .hero-cta {
-      display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
       animation: fadeUp 0.8s ease 0.45s both;
     }
+
     .btn-primary {
       background: var(--gold);
       color: var(--green-deep);
@@ -139,7 +179,12 @@
       border: 2px solid var(--gold);
       transition: background 0.2s, color 0.2s;
     }
-    .btn-primary:hover { background: transparent; color: var(--gold); }
+
+    .btn-primary:hover {
+      background: transparent;
+      color: var(--gold);
+    }
+
     .btn-secondary {
       background: transparent;
       color: var(--cream);
@@ -149,27 +194,56 @@
       letter-spacing: 0.08em;
       text-transform: uppercase;
       padding: 14px 36px;
-      border: 2px solid rgba(245,240,232,0.45);
+      border: 2px solid rgba(245, 240, 232, 0.45);
       transition: border-color 0.2s, color 0.2s;
     }
-    .btn-secondary:hover { border-color: var(--cream); color: var(--white); }
+
+    .btn-secondary:hover {
+      border-color: var(--cream);
+      color: var(--white);
+    }
 
     .hero-scroll {
-      position: absolute; bottom: 36px;
-      display: flex; flex-direction: column; align-items: center; gap: 8px;
-      color: rgba(245,240,232,0.5);
-      font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+      position: absolute;
+      bottom: 36px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: rgba(245, 240, 232, 0.5);
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
       animation: fadeUp 1s ease 1s both;
     }
-    .hero-scroll span { display: block; width: 1px; height: 40px; background: rgba(245,240,232,0.3); animation: scrollLine 2s ease-in-out infinite; }
+
+    .hero-scroll span {
+      display: block;
+      width: 1px;
+      height: 40px;
+      background: rgba(245, 240, 232, 0.3);
+      animation: scrollLine 2s ease-in-out infinite;
+    }
 
     /* ─── SECTION BASE ────────────────────────────── */
-    section { padding: 100px 24px; }
-    .container { max-width: 1100px; margin: 0 auto; }
-    .section-label {
-      font-size: 0.72rem; letter-spacing: 0.25em; text-transform: uppercase;
-      color: var(--green-mid); font-weight: 600; margin-bottom: 12px;
+    section {
+      padding: 100px 24px;
     }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--green-mid);
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
     .section-title {
       font-family: 'Playfair Display', serif;
       font-size: clamp(2rem, 4vw, 3rem);
@@ -178,155 +252,346 @@
       color: var(--green-deep);
       margin-bottom: 24px;
     }
-    .section-title em { font-style: italic; color: var(--green-mid); }
+
+    .section-title em {
+      font-style: italic;
+      color: var(--green-mid);
+    }
+
     .divider {
-      width: 60px; height: 2px;
+      width: 60px;
+      height: 2px;
       background: linear-gradient(90deg, var(--gold), transparent);
       margin-bottom: 32px;
     }
-    p { margin-bottom: 1rem; font-size: 1.1rem; color: var(--text-mid); }
+
+    p {
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+      color: var(--text-mid);
+    }
 
     /* ─── ABOUT ───────────────────────────────────── */
-    #about { background: var(--white); }
-    .about-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+    #about {
+      background: var(--white);
     }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
     .about-image {
       position: relative;
     }
+
     .about-image img {
-      width: 100%; aspect-ratio: 4/3; object-fit: cover;
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
       display: block;
     }
+
     .about-image::after {
       content: '';
       position: absolute;
-      top: 16px; left: 16px; right: -16px; bottom: -16px;
+      top: 16px;
+      left: 16px;
+      right: -16px;
+      bottom: -16px;
       border: 2px solid var(--gold);
       z-index: -1;
     }
+
     .about-image-caption {
-      position: absolute; bottom: 0; left: 0; right: 0;
-      background: linear-gradient(transparent, rgba(26,58,42,0.85));
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(26, 58, 42, 0.85));
       color: var(--cream);
-      font-size: 0.82rem; letter-spacing: 0.06em;
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
       padding: 32px 16px 12px;
       text-align: center;
     }
-    .stat-row { display: flex; gap: 40px; margin-top: 36px; }
-    .stat { border-left: 3px solid var(--gold); padding-left: 16px; }
+
+    .stat-row {
+      display: flex;
+      gap: 40px;
+      margin-top: 36px;
+    }
+
+    .stat {
+      border-left: 3px solid var(--gold);
+      padding-left: 16px;
+    }
+
     .stat-num {
       font-family: 'Playfair Display', serif;
-      font-size: 2.2rem; font-weight: 900; color: var(--green-deep); line-height: 1;
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--green-deep);
+      line-height: 1;
     }
-    .stat-label { font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-light); }
+
+    .stat-label {
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-light);
+    }
 
     /* ─── WHAT WE OFFER ───────────────────────────── */
-    #offer { background: var(--cream); }
-    .offer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 48px; }
+    #offer {
+      background: var(--cream);
+    }
+
+    .offer-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 48px;
+    }
+
     .offer-card {
       background: var(--white);
       border-top: 3px solid var(--green-mid);
       padding: 36px 28px;
       transition: transform 0.2s, box-shadow 0.2s;
     }
-    .offer-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(26,58,42,0.1); }
-    .offer-icon {
-      font-size: 2rem; margin-bottom: 16px; display: block;
+
+    .offer-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(26, 58, 42, 0.1);
     }
+
+    .offer-icon {
+      font-size: 2rem;
+      margin-bottom: 16px;
+      display: block;
+    }
+
     .offer-card h3 {
       font-family: 'Playfair Display', serif;
-      font-size: 1.3rem; color: var(--green-deep); margin-bottom: 10px;
+      font-size: 1.3rem;
+      color: var(--green-deep);
+      margin-bottom: 10px;
     }
-    .offer-card p { font-size: 1rem; margin: 0; }
+
+    .offer-card p {
+      font-size: 1rem;
+      margin: 0;
+    }
 
     /* ─── HOW TO JOIN ─────────────────────────────── */
-    #join { background: var(--green-deep); }
-    #join .section-label { color: var(--gold-light); }
-    #join .section-title { color: var(--white); }
-    #join .divider { background: linear-gradient(90deg, var(--gold), transparent); }
-    #join p { color: rgba(245,240,232,0.8); }
-    .join-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
-    .steps { margin-top: 12px; list-style: none; }
-    .step {
-      display: flex; gap: 24px; align-items: flex-start;
-      padding: 24px 0;
-      border-bottom: 1px solid rgba(200,168,75,0.2);
+    #join {
+      background: var(--green-deep);
     }
-    .step:last-child { border-bottom: none; }
+
+    #join .section-label {
+      color: var(--gold-light);
+    }
+
+    #join .section-title {
+      color: var(--white);
+    }
+
+    #join .divider {
+      background: linear-gradient(90deg, var(--gold), transparent);
+    }
+
+    #join p {
+      color: rgba(245, 240, 232, 0.8);
+    }
+
+    .join-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .steps {
+      margin-top: 12px;
+      list-style: none;
+    }
+
+    .step {
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+      padding: 24px 0;
+      border-bottom: 1px solid rgba(200, 168, 75, 0.2);
+    }
+
+    .step:last-child {
+      border-bottom: none;
+    }
+
     .step-num {
       font-family: 'Playfair Display', serif;
-      font-size: 2rem; font-weight: 900;
-      color: var(--gold); line-height: 1;
-      flex-shrink: 0; width: 40px;
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--gold);
+      line-height: 1;
+      flex-shrink: 0;
+      width: 40px;
     }
+
     .step-body h4 {
       font-family: 'Playfair Display', serif;
-      color: var(--white); font-size: 1.15rem; margin-bottom: 4px;
+      color: var(--white);
+      font-size: 1.15rem;
+      margin-bottom: 4px;
     }
-    .step-body p { color: rgba(245,240,232,0.7); font-size: 0.98rem; margin: 0; }
+
+    .step-body p {
+      color: rgba(245, 240, 232, 0.7);
+      font-size: 0.98rem;
+      margin: 0;
+    }
 
     .join-aside {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(200,168,75,0.25);
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(200, 168, 75, 0.25);
       padding: 40px 36px;
     }
+
     .join-aside h3 {
       font-family: 'Playfair Display', serif;
-      color: var(--gold-light); font-size: 1.5rem; margin-bottom: 20px;
+      color: var(--gold-light);
+      font-size: 1.5rem;
+      margin-bottom: 20px;
     }
+
     .fee-row {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 14px 0; border-bottom: 1px solid rgba(200,168,75,0.15);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(200, 168, 75, 0.15);
       color: var(--cream);
     }
-    .fee-row:last-child { border-bottom: none; }
-    .fee-type { font-size: 1rem; }
+
+    .fee-row:last-child {
+      border-bottom: none;
+    }
+
+    .fee-type {
+      font-size: 1rem;
+    }
+
     .fee-amount {
-      font-family: 'Playfair Display', serif; font-size: 1.4rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
       color: var(--gold);
     }
-    .fee-note { font-size: 0.8rem; color: rgba(245,240,232,0.5); font-style: italic; margin-top: 20px; }
+
+    .fee-note {
+      font-size: 0.8rem;
+      color: rgba(245, 240, 232, 0.5);
+      font-style: italic;
+      margin-top: 20px;
+    }
 
     /* ─── SEASON ──────────────────────────────────── */
-    #season { background: var(--white); }
-    .season-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; margin-top: 48px; }
+    #season {
+      background: var(--white);
+    }
+
+    .season-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+      margin-top: 48px;
+    }
+
     .season-card {
       border: 1px solid var(--cream-dark);
       padding: 32px;
       position: relative;
       overflow: hidden;
     }
+
     .season-card::before {
       content: '';
-      position: absolute; top: 0; left: 0;
-      width: 4px; height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
       background: var(--green-mid);
     }
+
     .season-card h3 {
       font-family: 'Playfair Display', serif;
-      font-size: 1.25rem; color: var(--green-deep); margin-bottom: 8px;
+      font-size: 1.25rem;
+      color: var(--green-deep);
+      margin-bottom: 8px;
     }
+
     .season-card .tag {
       display: inline-block;
       background: var(--green-pale);
       color: var(--green-deep);
-      font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
-      padding: 3px 10px; margin-bottom: 12px;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      margin-bottom: 12px;
     }
-    .season-card p { margin: 0; font-size: 1rem; }
+
+    .season-card p {
+      margin: 0;
+      font-size: 1rem;
+    }
 
     /* ─── CONTACT ─────────────────────────────────── */
-    #contact { background: var(--cream); }
-    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
-    .contact-item { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 28px; }
-    .contact-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
-    .contact-info h4 {
-      font-family: 'Playfair Display', serif; font-size: 1rem;
-      color: var(--green-deep); margin-bottom: 2px;
+    #contact {
+      background: var(--cream);
     }
-    .contact-info p { font-size: 0.98rem; margin: 0; color: var(--text-mid); }
-    .contact-form { display: flex; flex-direction: column; gap: 16px; }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 28px;
+    }
+
+    .contact-icon {
+      font-size: 1.4rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .contact-info h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      color: var(--green-deep);
+      margin-bottom: 2px;
+    }
+
+    .contact-info p {
+      font-size: 0.98rem;
+      margin: 0;
+      color: var(--text-mid);
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
     .contact-form input,
     .contact-form textarea,
     .contact-form select {
@@ -341,65 +606,131 @@
       transition: border-color 0.2s;
       width: 100%;
     }
+
     .contact-form input:focus,
     .contact-form textarea:focus,
-    .contact-form select:focus { border-color: var(--gold); }
-    .contact-form textarea { resize: vertical; min-height: 110px; }
+    .contact-form select:focus {
+      border-color: var(--gold);
+    }
+
+    .contact-form textarea {
+      resize: vertical;
+      min-height: 110px;
+    }
+
     .contact-form button {
       background: var(--green-deep);
       color: var(--cream);
       border: 2px solid var(--green-deep);
       padding: 14px 36px;
       font-family: 'Crimson Pro', serif;
-      font-size: 1rem; font-weight: 600;
-      letter-spacing: 0.1em; text-transform: uppercase;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
       cursor: pointer;
       transition: background 0.2s, color 0.2s;
       align-self: flex-start;
     }
-    .contact-form button:hover { background: transparent; color: var(--green-deep); }
+
+    .contact-form button:hover {
+      background: transparent;
+      color: var(--green-deep);
+    }
 
     /* ─── FOOTER ──────────────────────────────────── */
     footer {
       background: var(--text-dark);
-      color: rgba(245,240,232,0.55);
+      color: rgba(245, 240, 232, 0.55);
       text-align: center;
       padding: 36px 24px;
       font-size: 0.88rem;
       letter-spacing: 0.04em;
     }
+
     footer p {
-        color: rgba(245,240,232,0.55);
+      color: rgba(245, 240, 232, 0.55);
     }
-    footer strong { color: var(--gold); }
+
+    footer strong {
+      color: var(--gold);
+    }
 
     /* ─── ANIMATIONS ──────────────────────────────── */
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to   { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
+
     @keyframes scrollLine {
-      0%, 100% { transform: scaleY(1); opacity: 0.3; }
-      50%       { transform: scaleY(0.4); opacity: 1; }
+
+      0%,
+      100% {
+        transform: scaleY(1);
+        opacity: 0.3;
+      }
+
+      50% {
+        transform: scaleY(0.4);
+        opacity: 1;
+      }
     }
 
     /* ─── RESPONSIVE ──────────────────────────────── */
     @media (max-width: 800px) {
-      nav { padding: 0 20px; }
-      .nav-links { gap: 0.5em; }
-      .about-grid, .join-grid, .contact-grid { grid-template-columns: 1fr; gap: 48px; }
-      .offer-grid { grid-template-columns: 1fr; }
-      .season-grid { grid-template-columns: 1fr; }
-      .stat-row { gap: 24px; }
-      .stat-num { font-size: 1.5em; }
+      nav {
+        padding: 0 20px;
+      }
+
+      .nav-links {
+        gap: 0.5em;
+      }
+
+      .about-grid,
+      .join-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .offer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .season-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stat-row {
+        gap: 24px;
+      }
+
+      .stat-num {
+        font-size: 1.5em;
+      }
+
       section {
         padding: 24px;
-        }
-      .about-image{ width: 85%; }
-      .about-image::after { display: none; }
+      }
+
+      .about-image {
+        width: 85%;
+      }
+
+      .about-image::after {
+        display: none;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <!-- NAV -->
@@ -429,10 +760,7 @@
     <div class="container">
       <div class="about-grid">
         <div class="about-image">
-          <img
-            src="images/green.jpg"
-            alt="Legh Arms bowling green"
-          />
+          <img src="images/green.jpg" alt="Legh Arms bowling green" />
           <div class="about-image-caption">Our beautifully kept green</div>
         </div>
         <div class="about-text">
@@ -440,10 +768,13 @@
           <h2 class="section-title"><em>Crown Green bowling</em><br>in the heart of Sale</h2>
           <div class="divider"></div>
           <p>
-            Legh Arms Bowling Club is one of Sale's most welcoming bowling clubs, set in the grounds of the Legh Arms pub in the heart of Sale Moor. We offer a friendly, inclusive environment for players of all abilities — from complete beginners picking up a bowl for the first time to seasoned competitors.
+            Legh Arms Bowling Club is one of Sale's most welcoming bowling clubs, set in the grounds of the Legh Arms
+            pub in the heart of Sale Moor. We offer a friendly, inclusive environment for players of all abilities —
+            from complete beginners picking up a bowl for the first time to seasoned competitors.
           </p>
           <p>
-            Whether you're looking for gentle social play on a summer evening, competitive league and cup fixtures, or simply good company and a mid-game or post-game pint, you'll find it all here.
+            Whether you're looking for gentle social play on a summer evening, competitive league and cup fixtures, or
+            simply good company and a mid-game or post-game pint, you'll find it all here.
           </p>
           <div class="stat-row">
             <div class="stat">
@@ -462,6 +793,113 @@
         </div>
       </div>
     </div>
+    <br />
+    <br />
+    <div class="container">
+      <h2 class="section-title">Steve Hampton Memorial</h2>
+      <p>
+        The draw has been made for this competition, which will take place on Sunday 12 July. Non-members of the Legh
+        Arms Bowling Club will start on +1
+      </p>
+
+      <div class="about-grid">
+
+
+
+
+        <table>
+
+          <tbody>
+            <tr>
+              <td>John Gethins</td>
+              <td>Callum Rothwell</td>
+              <td>10:30</td>
+            </tr>
+            <tr>
+              <td>Andy McGuigan</td>
+              <td>Pete Westwood</td>
+              <td>10:30</td>
+            </tr>
+            <tr>
+              <td>Darren McKinnon</td>
+              <td>Dave Roberts</td>
+              <td>10:30</td>
+            </tr>
+            <tr>
+              <td>Dave Collier</td>
+              <td>Tyler Scrimgeour</td>
+              <td>10:30</td>
+            </tr>
+            <tr>
+              <td>Cameron Mateley</td>
+              <td>Neil Hinde</td>
+              <td>11:15</td>
+            </tr>
+            <tr>
+              <td>Brian Johns</td>
+              <td>Rhys Lloyd</td>
+              <td>11:15</td>
+            </tr>
+            <tr>
+              <td>Keith Royle</td>
+              <td>Dan Crowder</td>
+              <td>11:15</td>
+            </tr>
+            <tr>
+              <td>Steve Ridley</td>
+              <td>Terry King</td>
+              <td>11:15</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table>
+          <tbody>
+            <tr>
+              <td>Steve Scrimgeour</td>
+              <td>Colin Rothwell</td>
+              <td>12:00</td>
+            </tr>
+            <tr>
+              <td>Steve Crowder</td>
+              <td>Paul Hynes</td>
+              <td>12:00</td>
+            </tr>
+            <tr>
+              <td>Alan Lord</td>
+              <td>Tony Flanagan</td>
+              <td>12:00</td>
+            </tr>
+            <tr>
+              <td>Dave Jackson</td>
+              <td>Craig McGuigan</td>
+              <td>12:00</td>
+            </tr>
+
+            <tr>
+              <td>Graham Bentley</td>
+              <td>Neil Peters</td>
+              <td>12:45</td>
+            </tr>
+            <tr>
+              <td>Gary Minton</td>
+              <td>Steve Clarke</td>
+              <td>12:45</td>
+            </tr>
+            <tr>
+              <td>Dominic King</td>
+              <td>Stacey Burton</td>
+              <td>12:45</td>
+            </tr>
+            <tr>
+              <td>Sean Chappell</td>
+              <td>Paul Phillips</td>
+              <td>12:45</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </section>
 
   <!-- WHAT WE OFFER -->
@@ -473,13 +911,15 @@
       <div class="offer-grid">
         <div class="offer-card">
           <span class="offer-icon">🎯</span>
-          <h3>Competitive Play</h3>
-          <p>We compete in local league fixtures throughout the season, giving members a chance to test their skills against other clubs in the Sale and Manchester area.</p>
+          <h3>League Bowling</h3>
+          <p>We compete in local league fixtures throughout the season, giving members a chance to test their game
+            against other local clubs. We have teams at all levels and are always looking for new players. </p>
         </div>
         <div class="offer-card">
           <span class="offer-icon">☀️</span>
-          <h3>Social Evenings</h3>
-          <p>Not ready for league play? No problem. Our regular social roll-ups are relaxed, fun, and perfect for learning the game at your own pace alongside friendly faces.</p>
+          <h3>Social Bowling</h3>
+          <p>Not ready for league play? No problem. Our regular social roll-ups are relaxed, fun, and perfect for
+            learning the game at your own pace alongside friendly faces.</p>
         </div>
         <div class="offer-card">
           <span class="offer-icon">🏆</span>
@@ -490,22 +930,26 @@
             <li>Sunday 3 May 2026 10:30 Fred Roberts open</li>
             <li>Sunday 17 May 2026 10:30 Frankie Hough merit</li>
             <li>Sunday 7 June 2026 10:30 Mountain Rescue Fundraiser open</li>
+            <li>Sunday 12 July 2026 10:30 Steve Hampton Memorial Invitational</li>
           </ul>
         </div>
         <div class="offer-card">
           <span class="offer-icon">🍺</span>
           <h3>The Legh Arms</h3>
-          <p>We're based at the Legh Arms pub, so there's always a warm welcome and a great selection of drinks available at the bar. The perfect way to end any evening.</p>
+          <p>We're based at the Legh Arms pub, so there's always a warm welcome and a great selection of drinks
+            available at the bar. The perfect way to end any evening.</p>
         </div>
         <div class="offer-card">
           <span class="offer-icon">📚</span>
           <h3>Coaching & Guidance</h3>
-          <p>Complete beginners are warmly encouraged. Experienced members are always happy to show you the ropes — bowls is easier to learn than you might think!</p>
+          <p>Complete beginners are warmly encouraged. Experienced members are always happy to show you the ropes —
+            bowls is easier to learn than you might think!</p>
         </div>
         <div class="offer-card">
           <span class="offer-icon">🤝</span>
           <h3>Community</h3>
-          <p>We're a tight-knit, friendly club where you'll quickly feel at home. Socialising on and off the green is as much a part of membership as the sport itself.</p>
+          <p>We're a tight-knit, friendly club where you'll quickly feel at home. Socialising on and off the green is as
+            much a part of membership as the sport itself.</p>
         </div>
       </div>
     </div>
@@ -519,35 +963,40 @@
           <p class="section-label">Membership</p>
           <h2 class="section-title">How to <em>join</em> us</h2>
           <div class="divider"></div>
-          <p>Joining the Legh Arms Bowling Club is simple and straightforward. We welcome new members of all ages and abilities throughout the season — you don't need any experience to get started.</p>
+          <p>Joining the Legh Arms Bowling Club is simple and straightforward. We welcome new members of all ages and
+            abilities throughout the season — you don't need any experience to get started.</p>
 
           <ol class="steps">
             <li class="step">
               <span class="step-num">01</span>
               <div class="step-body">
                 <h4>Come and have a look</h4>
-                <p>Pop down to the Legh Arms on a Monday or Thursday evening — no commitment needed. Watch a game, have a chat, and see if the club feels right for you.</p>
+                <p>Pop down to the Legh Arms on a Monday or Thursday evening — no commitment needed. Watch a game, have
+                  a chat, and see if the club feels right for you.</p>
               </div>
             </li>
             <li class="step">
               <span class="step-num">02</span>
               <div class="step-body">
                 <h4>Have a free taster session</h4>
-                <p>We'll lend you a set of bowls and walk you through the basics. There's no obligation and no experience necessary — just come prepared to enjoy yourself.</p>
+                <p>We'll lend you a set of bowls and walk you through the basics. There's no obligation and no
+                  experience necessary — just come prepared to enjoy yourself.</p>
               </div>
             </li>
             <li class="step">
               <span class="step-num">03</span>
               <div class="step-body">
-                <h4>Complete your membership form</h4>
-                <p>If you'd like to join, simply pay your annual subscription. You'll receive your membership card and club details.</p>
+                <h4>Join the club</h4>
+                <p>If you'd like to join, simply pay your annual subscription and you'll receive your membership card.
+                </p>
               </div>
             </li>
             <li class="step">
               <span class="step-num">04</span>
               <div class="step-body">
                 <h4>Get on the green!</h4>
-                <p>You're now a fully-fledged member. Join practice sessions, enter competitions, play league games — the green is yours to enjoy all season long.</p>
+                <p>You're now a fully-fledged member. Join practice sessions, enter competitions, play league games —
+                  the green is yours to enjoy all season long.</p>
               </div>
             </li>
           </ol>
@@ -572,12 +1021,12 @@
             <span class="fee-amount">£20</span>
           </div>
           <br>
-          <h3 style="color:var(--gold-light);font-family:'Playfair Display',serif;font-size:1.2rem;margin-bottom:12px;">What you'll need</h3>
+          <h3 style="color:var(--gold-light);font-family:'Playfair Display',serif;font-size:1.2rem;margin-bottom:12px;">
+            What you'll need</h3>
           <p style="color:rgba(245,240,232,0.7);font-size:0.98rem;margin:0;">
             ✓ Wear flat-soled shoes or trainers on the green<br>
             ✓ No dress code - wear what you want<br>
-            ✓ No bowls needed — you can borrow some<br>
-            ✓ Willingness to have fun!
+            ✓ No bowls needed — we have lots you can borrow<br>
           </p>
         </div>
       </div>
@@ -590,32 +1039,37 @@
       <p class="section-label">The Season</p>
       <h2 class="section-title">When we <em>play</em></h2>
       <div class="divider"></div>
-      <p style="max-width:600px;">Our outdoor season runs from April through to September, with something happening most weeknights and often weekends too. Here's what to expect across the year:</p>
+      <p style="max-width:600px;">Our outdoor season runs from April through to September, with something happening most
+        weeknights and often weekends too. Here's what to expect across the year:</p>
       <div class="season-grid">
         <div class="season-card">
           <span class="tag">March</span>
           <h3>Season Opening</h3>
-          <p>The green reopens and members return for the first roll of the year. A great time to join — everyone's finding their feet again!</p>
+          <p>The green reopens and members return for the first roll of the year. A great time to join — everyone's
+            finding their feet again!</p>
         </div>
         <div class="season-card">
           <span class="tag">April – September</span>
           <h3>League & Social Play</h3>
-          <p>Mid-week league fixtures begin. Social evenings are in full swing — the long summer evenings make for perfect bowling conditions.</p>
+          <p>Mid-week league fixtures begin. Social evenings are in full swing — the long summer evenings make for
+            perfect bowling conditions.</p>
         </div>
         <div class="season-card">
           <span class="tag">April – September</span>
           <h3>Club Competitions</h3>
-          <p>Our internal singles and pairs competitions take place around once a month. We also hold some open competitions where anyone can play.</p>
+          <p>Our internal singles and pairs competitions take place around once a month. We also hold some open
+            competitions where anyone can play.</p>
         </div>
         <div class="season-card">
           <span class="tag">September</span>
           <h3>End of Season</h3>
           <p>Final league matches and competitions. The green closes around the end of the month</p>
         </div>
-          <div class="season-card">
+        <div class="season-card">
           <span class="tag">Close season</span>
           <h3>Green maintenance</h3>
-          <p>We hold regular work parties during the close season to keep the green and surrounds tidy. Painting, woodworking, gardening - there's always something to do and it keeps us in contact over the winter.</p>
+          <p>We hold regular work parties during the close season to keep the green and surrounds tidy. Painting,
+            woodworking, gardening - there's always something to do and it keeps us in contact over the winter.</p>
         </div>
       </div>
     </div>
@@ -629,7 +1083,8 @@
           <p class="section-label">Get in Touch</p>
           <h2 class="section-title">Come and find <em>us</em></h2>
           <div class="divider"></div>
-          <p>We'd love to hear from you, whether you're interested in joining, have a question about the club, or simply want to come and watch a game.</p>
+          <p>We'd love to hear from you, whether you're interested in joining, have a question about the club, or simply
+            want to come and watch a game.</p>
 
           <div class="contact-item">
             <span class="contact-icon">📍</span>
@@ -649,7 +1104,9 @@
             <span class="contact-icon">✉️</span>
             <div class="contact-info">
               <h4>Email</h4>
-              <p><a href="mailto:legharmsbowlingclub@protonmail.com?subject=Enquiry from website">legharmsbowlingclub@protonmail.com</a></p>
+              <p><a
+                  href="mailto:legharmsbowlingclub@protonmail.com?subject=Enquiry from website">legharmsbowlingclub@protonmail.com</a>
+              </p>
             </div>
           </div>
         </div>
